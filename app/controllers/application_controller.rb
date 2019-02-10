@@ -38,7 +38,6 @@ erb :edit
 end
 
 patch '/recipes/:id' do
-  binding.pry
 @recipe = Recipe.find(params[:id])
 
 @recipe.name = params[:name]
@@ -46,7 +45,7 @@ patch '/recipes/:id' do
 @recipe.cook_time = params[:cook_time]
 @recipe.save
 
-
+redirect "/recipes/#{@recipe.id}"
 end
 
 
