@@ -38,8 +38,9 @@ erb :edit
 end
 
 patch '/recipes/:id' do
+  binding.pry
 @recipe = Recipe.find(params[:id])
-binding.pry
+
 @recipe.name = params[:name]
 @recipe.ingredients = params[:ingredients]
 @recipe.cook_time = params[:cook_time]
